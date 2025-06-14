@@ -384,12 +384,22 @@ namespace rackets2listener
                 }
                 else if (token == "show")
                 {
-                    render = 1;
+                    render |= 0b0100;
                     i++;
                 } 
                 else if (token == "hide")
                 {
-                    render = 2;
+                    render |= 0b1100;
+                    i++;
+                }
+                else if (token == "skip")
+                {
+                    render |= 0b0011;
+                    i++;
+                }  
+                else if (token == "noskip")
+                {
+                    render |= 0b0001;
                     i++;
                 }
                 else if (token == "left_stick" || token == "right_stick")
@@ -444,6 +454,11 @@ namespace rackets2listener
                 else
                 {
                     throw new Exception($"Unknown token: {token}");
+                }
+
+                if (render != 0)
+                {
+                    Console.WriteLine($"saw {token}: {render}");
                 }
             }
 

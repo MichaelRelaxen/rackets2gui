@@ -20,8 +20,6 @@ namespace rackets2listener
 
         private static uint tasHideHud = 0x1BE0048;
 
-        private static string currentScriptFile = null;
-
         public static string UploadInputsFile(this Ratchetron api, string scriptFilePath)
         {
             if (!File.Exists(scriptFilePath))
