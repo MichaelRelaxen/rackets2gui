@@ -136,6 +136,11 @@ namespace rackets2listener
             api.ReloadSetState(4);
         }
 
+        public static void StartRecording(this Ratchetron api)
+        {
+            api.ReloadSetState(1);
+        }
+
         public static void SetRenderingMode(this Ratchetron api, bool skipFrames, bool skipRender)
         {
             api.WriteUint(tasRenderMode, (uint)(skipRender ? 1 : 0));

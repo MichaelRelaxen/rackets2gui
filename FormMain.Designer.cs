@@ -60,6 +60,7 @@
             this.comboLevelSelect = new System.Windows.Forms.ComboBox();
             this.buttonSetPlanet = new System.Windows.Forms.Button();
             this.pastePositionButton = new System.Windows.Forms.Button();
+            this.buttonRecording = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // buttonAdvance
             // 
-            this.buttonAdvance.Location = new System.Drawing.Point(9, 173);
+            this.buttonAdvance.Location = new System.Drawing.Point(9, 209);
             this.buttonAdvance.Name = "buttonAdvance";
             this.buttonAdvance.Size = new System.Drawing.Size(129, 27);
             this.buttonAdvance.TabIndex = 2;
@@ -90,7 +91,7 @@
             // 
             // buttonPause
             // 
-            this.buttonPause.Location = new System.Drawing.Point(9, 140);
+            this.buttonPause.Location = new System.Drawing.Point(9, 176);
             this.buttonPause.Name = "buttonPause";
             this.buttonPause.Size = new System.Drawing.Size(129, 27);
             this.buttonPause.TabIndex = 5;
@@ -143,19 +144,20 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonRecording);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.buttonRestart);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.buttonRestart);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.buttonCancel);
             this.groupBox2.Controls.Add(this.buttonResume);
+            this.groupBox2.Controls.Add(this.buttonCancel);
             this.groupBox2.Controls.Add(this.buttonPause);
             this.groupBox2.Controls.Add(this.buttonAdvance);
             this.groupBox2.Location = new System.Drawing.Point(12, 137);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(183, 229);
+            this.groupBox2.Size = new System.Drawing.Size(183, 259);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Playback Options";
@@ -165,7 +167,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label6.Location = new System.Drawing.Point(144, 60);
+            this.label6.Location = new System.Drawing.Point(144, 27);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(25, 13);
@@ -174,7 +176,7 @@
             // 
             // buttonRestart
             // 
-            this.buttonRestart.Location = new System.Drawing.Point(9, 52);
+            this.buttonRestart.Location = new System.Drawing.Point(9, 19);
             this.buttonRestart.Name = "buttonRestart";
             this.buttonRestart.Size = new System.Drawing.Size(129, 27);
             this.buttonRestart.TabIndex = 15;
@@ -187,7 +189,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label5.Location = new System.Drawing.Point(144, 27);
+            this.label5.Location = new System.Drawing.Point(144, 93);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(25, 13);
@@ -199,7 +201,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label4.Location = new System.Drawing.Point(144, 115);
+            this.label4.Location = new System.Drawing.Point(144, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 13;
@@ -210,7 +212,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Location = new System.Drawing.Point(144, 181);
+            this.label1.Location = new System.Drawing.Point(144, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 13);
             this.label1.TabIndex = 12;
@@ -221,7 +223,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label2.Location = new System.Drawing.Point(144, 148);
+            this.label2.Location = new System.Drawing.Point(144, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 10;
@@ -229,17 +231,17 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(9, 19);
+            this.buttonCancel.Location = new System.Drawing.Point(9, 85);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(129, 27);
             this.buttonCancel.TabIndex = 8;
-            this.buttonCancel.Text = "Cancel Playback";
+            this.buttonCancel.Text = "Stop";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonResume
             // 
-            this.buttonResume.Location = new System.Drawing.Point(9, 107);
+            this.buttonResume.Location = new System.Drawing.Point(9, 143);
             this.buttonResume.Name = "buttonResume";
             this.buttonResume.Size = new System.Drawing.Size(129, 27);
             this.buttonResume.TabIndex = 6;
@@ -361,7 +363,7 @@
             this.groupBox5.Controls.Add(this.pastePositionButton);
             this.groupBox5.Controls.Add(this.buttonCopyPos);
             this.groupBox5.Controls.Add(this.buttonSetPosition);
-            this.groupBox5.Location = new System.Drawing.Point(201, 271);
+            this.groupBox5.Location = new System.Drawing.Point(207, 271);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(144, 125);
             this.groupBox5.TabIndex = 21;
@@ -382,9 +384,9 @@
             // 
             this.groupBox6.Controls.Add(this.buttonSetPlanet);
             this.groupBox6.Controls.Add(this.comboLevelSelect);
-            this.groupBox6.Location = new System.Drawing.Point(13, 373);
+            this.groupBox6.Location = new System.Drawing.Point(12, 402);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(182, 93);
+            this.groupBox6.Size = new System.Drawing.Size(339, 86);
             this.groupBox6.TabIndex = 22;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Level Options";
@@ -422,14 +424,14 @@
             "Jamming Array"});
             this.comboLevelSelect.Location = new System.Drawing.Point(8, 20);
             this.comboLevelSelect.Name = "comboLevelSelect";
-            this.comboLevelSelect.Size = new System.Drawing.Size(160, 21);
+            this.comboLevelSelect.Size = new System.Drawing.Size(322, 21);
             this.comboLevelSelect.TabIndex = 0;
             // 
             // buttonSetPlanet
             // 
             this.buttonSetPlanet.Location = new System.Drawing.Point(8, 47);
             this.buttonSetPlanet.Name = "buttonSetPlanet";
-            this.buttonSetPlanet.Size = new System.Drawing.Size(160, 27);
+            this.buttonSetPlanet.Size = new System.Drawing.Size(322, 27);
             this.buttonSetPlanet.TabIndex = 22;
             this.buttonSetPlanet.Text = "Set Current Planet";
             this.buttonSetPlanet.UseVisualStyleBackColor = true;
@@ -445,11 +447,21 @@
             this.pastePositionButton.UseVisualStyleBackColor = true;
             this.pastePositionButton.Click += new System.EventHandler(this.pastePositionButton_Click);
             // 
+            // buttonRecording
+            // 
+            this.buttonRecording.Location = new System.Drawing.Point(9, 52);
+            this.buttonRecording.Name = "buttonRecording";
+            this.buttonRecording.Size = new System.Drawing.Size(129, 27);
+            this.buttonRecording.TabIndex = 17;
+            this.buttonRecording.Text = "Recording Mode";
+            this.buttonRecording.UseVisualStyleBackColor = true;
+            this.buttonRecording.Click += new System.EventHandler(this.buttonRecording_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 478);
+            this.ClientSize = new System.Drawing.Size(361, 497);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -509,5 +521,6 @@
         private System.Windows.Forms.Button buttonSetPlanet;
         private System.Windows.Forms.ComboBox comboLevelSelect;
         private System.Windows.Forms.Button pastePositionButton;
+        private System.Windows.Forms.Button buttonRecording;
     }
 }

@@ -161,5 +161,10 @@ namespace racketslistener2
         {
             api.PastePositionFromClipboard();
         }
+
+        private void buttonRecording_Click(object sender, EventArgs e)
+        {
+            api.StartRecording();
+        }
     }
 }
