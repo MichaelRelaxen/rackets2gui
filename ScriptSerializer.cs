@@ -46,7 +46,8 @@ namespace rackets2listener
         private class ButtonPress : Action
         {
             public ushort ButtonMask;
-            public ushort Breakpoint = 0;
+            public byte Load_Pos_Flag = 0;
+            public byte Breakpoint = 0;
             public ushort Render = 0;
             public ushort Length = 0x18;
 
@@ -62,7 +63,9 @@ namespace rackets2listener
                 // Write stick values
                 writer.Write(new byte[] { RX, RY, LX, LY });
 
-                writer.Write(BitConverter.GetBytes(Breakpoint).Reverse().ToArray());
+                writer.Write(Load_Pos_Flag);     // 1 byte
+                writer.Write(Breakpoint);        // 1 byte
+
                 writer.Write(BitConverter.GetBytes(Render).Reverse().ToArray());
                 writer.Write(BitConverter.GetBytes(Length).Reverse().ToArray());
                 writer.Write(BitConverter.GetBytes(0x7C).Reverse().ToArray());
@@ -363,7 +366,9 @@ namespace rackets2listener
 
             // Begin compound handling
             ushort btnMask = 0;
-            ushort breakpoint = 0;
+
+            byte load_pos_flag = 0;
+            byte breakpoint = 0;
             ushort render = 0;
             byte lx = 128, ly = 128, rx = 128, ry = 128;
 
@@ -375,6 +380,11 @@ namespace rackets2listener
                 if (buttonMap.TryGetValue(token, out ushort mask))
                 {
                     btnMask |= mask;
+                    i++;
+                }
+                else if (token == "teleport")
+                {
+                    load_pos_flag = 1;
                     i++;
                 }
                 else if (token == "breakpoint")
@@ -462,7 +472,7 @@ namespace rackets2listener
                 }
             }
 
-            return new ButtonPress { ButtonMask = btnMask, Breakpoint = breakpoint, Render = render, LX = lx, LY = ly, RX = rx, RY = ry };
+            return new ButtonPress { ButtonMask = btnMask, Load_Pos_Flag = load_pos_flag, Breakpoint = breakpoint, Render = render, LX = lx, LY = ly, RX = rx, RY = ry };
         }
 
     }

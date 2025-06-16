@@ -46,16 +46,26 @@
             this.buttonResume = new System.Windows.Forms.Button();
             this.checkBoxHotkeys = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBoxFrameskip = new System.Windows.Forms.CheckBox();
-            this.checkBoxRendering = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.buttonSetAside = new System.Windows.Forms.Button();
-            this.buttonLoadSetAside = new System.Windows.Forms.Button();
             this.checkBoxHideHud = new System.Windows.Forms.CheckBox();
+            this.checkBoxRendering = new System.Windows.Forms.CheckBox();
+            this.checkBoxFrameskip = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonLoadSetAside = new System.Windows.Forms.Button();
+            this.buttonSetAside = new System.Windows.Forms.Button();
+            this.forceAutosaveButton = new System.Windows.Forms.Button();
+            this.buttonSetPosition = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonCopyPos = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboLevelSelect = new System.Windows.Forms.ComboBox();
+            this.buttonSetPlanet = new System.Windows.Forms.Button();
+            this.pastePositionButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonUploadRun
@@ -261,16 +271,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Global Options";
             // 
-            // checkBoxFrameskip
+            // checkBoxHideHud
             // 
-            this.checkBoxFrameskip.AutoSize = true;
-            this.checkBoxFrameskip.Location = new System.Drawing.Point(6, 42);
-            this.checkBoxFrameskip.Name = "checkBoxFrameskip";
-            this.checkBoxFrameskip.Size = new System.Drawing.Size(130, 17);
-            this.checkBoxFrameskip.TabIndex = 10;
-            this.checkBoxFrameskip.Text = "Enable Frameskipping";
-            this.checkBoxFrameskip.UseVisualStyleBackColor = true;
-            this.checkBoxFrameskip.CheckedChanged += new System.EventHandler(this.checkBoxFrameskip_CheckedChanged);
+            this.checkBoxHideHud.AutoSize = true;
+            this.checkBoxHideHud.Location = new System.Drawing.Point(6, 88);
+            this.checkBoxHideHud.Name = "checkBoxHideHud";
+            this.checkBoxHideHud.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxHideHud.TabIndex = 12;
+            this.checkBoxHideHud.Text = "Hide TAS HUD";
+            this.checkBoxHideHud.UseVisualStyleBackColor = true;
+            this.checkBoxHideHud.CheckedChanged += new System.EventHandler(this.checkBoxHideHud_CheckedChanged);
             // 
             // checkBoxRendering
             // 
@@ -283,26 +293,28 @@
             this.checkBoxRendering.UseVisualStyleBackColor = true;
             this.checkBoxRendering.CheckedChanged += new System.EventHandler(this.checkBoxRendering_CheckedChanged);
             // 
+            // checkBoxFrameskip
+            // 
+            this.checkBoxFrameskip.AutoSize = true;
+            this.checkBoxFrameskip.Location = new System.Drawing.Point(6, 42);
+            this.checkBoxFrameskip.Name = "checkBoxFrameskip";
+            this.checkBoxFrameskip.Size = new System.Drawing.Size(130, 17);
+            this.checkBoxFrameskip.TabIndex = 10;
+            this.checkBoxFrameskip.Text = "Enable Frameskipping";
+            this.checkBoxFrameskip.UseVisualStyleBackColor = true;
+            this.checkBoxFrameskip.CheckedChanged += new System.EventHandler(this.checkBoxFrameskip_CheckedChanged);
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.forceAutosaveButton);
             this.groupBox4.Controls.Add(this.buttonLoadSetAside);
             this.groupBox4.Controls.Add(this.buttonSetAside);
             this.groupBox4.Location = new System.Drawing.Point(201, 137);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(144, 229);
+            this.groupBox4.Size = new System.Drawing.Size(144, 128);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Savefile Options";
-            // 
-            // buttonSetAside
-            // 
-            this.buttonSetAside.Location = new System.Drawing.Point(6, 19);
-            this.buttonSetAside.Name = "buttonSetAside";
-            this.buttonSetAside.Size = new System.Drawing.Size(129, 27);
-            this.buttonSetAside.TabIndex = 17;
-            this.buttonSetAside.Text = "Set Aside File";
-            this.buttonSetAside.UseVisualStyleBackColor = true;
-            this.buttonSetAside.Click += new System.EventHandler(this.buttonSetAside_Click);
             // 
             // buttonLoadSetAside
             // 
@@ -314,27 +326,139 @@
             this.buttonLoadSetAside.UseVisualStyleBackColor = true;
             this.buttonLoadSetAside.Click += new System.EventHandler(this.buttonLoadSetAside_Click);
             // 
-            // checkBoxHideHud
+            // buttonSetAside
             // 
-            this.checkBoxHideHud.AutoSize = true;
-            this.checkBoxHideHud.Location = new System.Drawing.Point(6, 88);
-            this.checkBoxHideHud.Name = "checkBoxHideHud";
-            this.checkBoxHideHud.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxHideHud.TabIndex = 12;
-            this.checkBoxHideHud.Text = "Hide TAS HUD";
-            this.checkBoxHideHud.UseVisualStyleBackColor = true;
-            this.checkBoxHideHud.CheckedChanged += new System.EventHandler(this.checkBoxHideHud_CheckedChanged);
+            this.buttonSetAside.Location = new System.Drawing.Point(6, 19);
+            this.buttonSetAside.Name = "buttonSetAside";
+            this.buttonSetAside.Size = new System.Drawing.Size(129, 27);
+            this.buttonSetAside.TabIndex = 17;
+            this.buttonSetAside.Text = "Set Aside File";
+            this.buttonSetAside.UseVisualStyleBackColor = true;
+            this.buttonSetAside.Click += new System.EventHandler(this.buttonSetAside_Click);
+            // 
+            // forceAutosaveButton
+            // 
+            this.forceAutosaveButton.Location = new System.Drawing.Point(6, 85);
+            this.forceAutosaveButton.Name = "forceAutosaveButton";
+            this.forceAutosaveButton.Size = new System.Drawing.Size(129, 27);
+            this.forceAutosaveButton.TabIndex = 19;
+            this.forceAutosaveButton.Text = "Force Autosave";
+            this.forceAutosaveButton.UseVisualStyleBackColor = true;
+            this.forceAutosaveButton.Click += new System.EventHandler(this.forceAutosaveButton_Click);
+            // 
+            // buttonSetPosition
+            // 
+            this.buttonSetPosition.Location = new System.Drawing.Point(6, 19);
+            this.buttonSetPosition.Name = "buttonSetPosition";
+            this.buttonSetPosition.Size = new System.Drawing.Size(129, 27);
+            this.buttonSetPosition.TabIndex = 20;
+            this.buttonSetPosition.Text = "Set Position From Game";
+            this.buttonSetPosition.UseVisualStyleBackColor = true;
+            this.buttonSetPosition.Click += new System.EventHandler(this.buttonSetPosition_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.pastePositionButton);
+            this.groupBox5.Controls.Add(this.buttonCopyPos);
+            this.groupBox5.Controls.Add(this.buttonSetPosition);
+            this.groupBox5.Location = new System.Drawing.Point(201, 271);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(144, 125);
+            this.groupBox5.TabIndex = 21;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Position Options";
+            // 
+            // buttonCopyPos
+            // 
+            this.buttonCopyPos.Location = new System.Drawing.Point(6, 52);
+            this.buttonCopyPos.Name = "buttonCopyPos";
+            this.buttonCopyPos.Size = new System.Drawing.Size(129, 27);
+            this.buttonCopyPos.TabIndex = 21;
+            this.buttonCopyPos.Text = "Copy Saved Position";
+            this.buttonCopyPos.UseVisualStyleBackColor = true;
+            this.buttonCopyPos.Click += new System.EventHandler(this.buttonCopyPos_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.buttonSetPlanet);
+            this.groupBox6.Controls.Add(this.comboLevelSelect);
+            this.groupBox6.Location = new System.Drawing.Point(13, 373);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(182, 93);
+            this.groupBox6.TabIndex = 22;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Level Options";
+            // 
+            // comboLevelSelect
+            // 
+            this.comboLevelSelect.FormattingEnabled = true;
+            this.comboLevelSelect.Items.AddRange(new object[] {
+            "Aranos",
+            "Oozla",
+            "Maktar",
+            "Endako",
+            "Barlow",
+            "Feltzin",
+            "Notak",
+            "Siberius",
+            "Tabora",
+            "Dobbo",
+            "Hrugis",
+            "Joba",
+            "Todano",
+            "Boldan",
+            "Aranos 2",
+            "Gorn",
+            "Snivelak",
+            "Smolg",
+            "Damosel",
+            "Grelbin",
+            "Yeedil",
+            "Insomniac Museum",
+            "Dobbo Orbit",
+            "Damosel Orbit",
+            "Slim Cognito",
+            "Wupash",
+            "Jamming Array"});
+            this.comboLevelSelect.Location = new System.Drawing.Point(8, 20);
+            this.comboLevelSelect.Name = "comboLevelSelect";
+            this.comboLevelSelect.Size = new System.Drawing.Size(160, 21);
+            this.comboLevelSelect.TabIndex = 0;
+            // 
+            // buttonSetPlanet
+            // 
+            this.buttonSetPlanet.Location = new System.Drawing.Point(8, 47);
+            this.buttonSetPlanet.Name = "buttonSetPlanet";
+            this.buttonSetPlanet.Size = new System.Drawing.Size(160, 27);
+            this.buttonSetPlanet.TabIndex = 22;
+            this.buttonSetPlanet.Text = "Set Current Planet";
+            this.buttonSetPlanet.UseVisualStyleBackColor = true;
+            this.buttonSetPlanet.Click += new System.EventHandler(this.buttonSetPlanet_Click);
+            // 
+            // pastePositionButton
+            // 
+            this.pastePositionButton.Location = new System.Drawing.Point(6, 85);
+            this.pastePositionButton.Name = "pastePositionButton";
+            this.pastePositionButton.Size = new System.Drawing.Size(129, 27);
+            this.pastePositionButton.TabIndex = 22;
+            this.pastePositionButton.Text = "Set Position From Paste";
+            this.pastePositionButton.UseVisualStyleBackColor = true;
+            this.pastePositionButton.Click += new System.EventHandler(this.pastePositionButton_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 385);
+            this.ClientSize = new System.Drawing.Size(356, 478);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "FormMain";
+            this.ShowIcon = false;
             this.Text = "Rackets2 GUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyUp);
@@ -345,6 +469,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -375,5 +501,13 @@
         private System.Windows.Forms.Button buttonLoadSetAside;
         private System.Windows.Forms.Button buttonSetAside;
         private System.Windows.Forms.CheckBox checkBoxHideHud;
+        private System.Windows.Forms.Button forceAutosaveButton;
+        private System.Windows.Forms.Button buttonSetPosition;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonCopyPos;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button buttonSetPlanet;
+        private System.Windows.Forms.ComboBox comboLevelSelect;
+        private System.Windows.Forms.Button pastePositionButton;
     }
 }

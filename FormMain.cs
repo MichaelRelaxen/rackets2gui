@@ -136,5 +136,30 @@ namespace racketslistener2
             else if (e.KeyCode == Keys.S)
                 buttonAdvance_Click(sender, e); 
         }
+
+        private void buttonSetPosition_Click(object sender, EventArgs e)
+        {
+            api.SetPositionToLoadMethod();
+        }
+
+        private void buttonCopyPos_Click(object sender, EventArgs e)
+        {
+            api.CopyPositionToClipBoardMethod();
+        }
+
+        private void buttonSetPlanet_Click(object sender, EventArgs e)
+        {
+            api.SetCurrentLevelMethod((uint)comboLevelSelect.SelectedIndex);
+        }
+
+        private void forceAutosaveButton_Click(object sender, EventArgs e)
+        {
+            api.SetSaveModeMethod(3); // 3 is autosave.
+        }
+
+        private void pastePositionButton_Click(object sender, EventArgs e)
+        {
+            api.PastePositionFromClipboard();
+        }
     }
 }

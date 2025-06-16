@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Threading;
+using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace rackets2listener
 {
@@ -19,6 +23,14 @@ namespace rackets2listener
         private static uint savefileSetAside = 0x1BE0044;
 
         private static uint tasHideHud = 0x1BE0048;
+
+        private static uint saveMode = 0x1BE004C;
+        private static uint positionToLoad = 0x1BE0400;
+        private static uint playerPosition = 0x147F260;
+        private static uint currentPlanet = 0x1329A3C;
+
+        private static string savedPosition;
+
 
         public static string UploadInputsFile(this Ratchetron api, string scriptFilePath)
         {
@@ -70,6 +82,32 @@ namespace rackets2listener
         public static void Framestep(this Ratchetron api)
         {
             api.WriteUint(frameAdvance, 1);
+        }
+
+        public static void SetPositionToLoadMethod(this Ratchetron api)
+        {
+            savedPosition = api.ReadMemoryStr(api.getCurrentPID(), playerPosition, 34);
+            api.WriteMemory(api.getCurrentPID(), positionToLoad, 34, savedPosition);
+        }
+
+        public static void CopyPositionToClipBoardMethod(this Ratchetron api)
+        {
+            Clipboard.SetText(savedPosition);
+        }
+        public static void PastePositionFromClipboard(this Ratchetron api)
+        {
+            savedPosition = Clipboard.GetText();
+            api.WriteMemory(api.getCurrentPID(), positionToLoad, 34, savedPosition);
+        }
+
+        public static void SetCurrentLevelMethod(this Ratchetron api, uint level)
+        {
+            api.WriteMemory(api.getCurrentPID(), currentPlanet, level);
+        }
+
+        public static void SetSaveModeMethod(this Ratchetron api, uint mode)
+        {
+            api.WriteMemory(api.getCurrentPID(), saveMode, mode);
         }
 
         public static void SetAsideMethod(this Ratchetron api)
