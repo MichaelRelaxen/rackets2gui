@@ -36,31 +36,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonOpenScript = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonRecording = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonRestart = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonRestart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonResume = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.checkBoxHotkeys = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxHideHud = new System.Windows.Forms.CheckBox();
             this.checkBoxRendering = new System.Windows.Forms.CheckBox();
             this.checkBoxFrameskip = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.forceAutosaveButton = new System.Windows.Forms.Button();
             this.buttonLoadSetAside = new System.Windows.Forms.Button();
             this.buttonSetAside = new System.Windows.Forms.Button();
-            this.forceAutosaveButton = new System.Windows.Forms.Button();
             this.buttonSetPosition = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pastePositionButton = new System.Windows.Forms.Button();
             this.buttonCopyPos = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboLevelSelect = new System.Windows.Forms.ComboBox();
             this.buttonSetPlanet = new System.Windows.Forms.Button();
-            this.pastePositionButton = new System.Windows.Forms.Button();
-            this.buttonRecording = new System.Windows.Forms.Button();
+            this.comboLevelSelect = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -162,6 +162,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Playback Options";
             // 
+            // buttonRecording
+            // 
+            this.buttonRecording.Location = new System.Drawing.Point(9, 52);
+            this.buttonRecording.Name = "buttonRecording";
+            this.buttonRecording.Size = new System.Drawing.Size(129, 27);
+            this.buttonRecording.TabIndex = 17;
+            this.buttonRecording.Text = "Recording Mode";
+            this.buttonRecording.UseVisualStyleBackColor = true;
+            this.buttonRecording.Click += new System.EventHandler(this.buttonRecording_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -173,16 +183,6 @@
             this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "(l)";
-            // 
-            // buttonRestart
-            // 
-            this.buttonRestart.Location = new System.Drawing.Point(9, 19);
-            this.buttonRestart.Name = "buttonRestart";
-            this.buttonRestart.Size = new System.Drawing.Size(129, 27);
-            this.buttonRestart.TabIndex = 15;
-            this.buttonRestart.Text = "Restart Playback";
-            this.buttonRestart.UseVisualStyleBackColor = true;
-            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
             // 
             // label5
             // 
@@ -207,6 +207,16 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "(r)";
             // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Location = new System.Drawing.Point(9, 19);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(129, 27);
+            this.buttonRestart.TabIndex = 15;
+            this.buttonRestart.Text = "Restart Playback";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -229,16 +239,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "(p)";
             // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(9, 85);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(129, 27);
-            this.buttonCancel.TabIndex = 8;
-            this.buttonCancel.Text = "Stop";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
             // buttonResume
             // 
             this.buttonResume.Location = new System.Drawing.Point(9, 143);
@@ -248,6 +248,16 @@
             this.buttonResume.Text = "Resume";
             this.buttonResume.UseVisualStyleBackColor = true;
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(9, 85);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(129, 27);
+            this.buttonCancel.TabIndex = 8;
+            this.buttonCancel.Text = "Stop";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // checkBoxHotkeys
             // 
@@ -318,6 +328,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Savefile Options";
             // 
+            // forceAutosaveButton
+            // 
+            this.forceAutosaveButton.Location = new System.Drawing.Point(6, 85);
+            this.forceAutosaveButton.Name = "forceAutosaveButton";
+            this.forceAutosaveButton.Size = new System.Drawing.Size(129, 27);
+            this.forceAutosaveButton.TabIndex = 19;
+            this.forceAutosaveButton.Text = "Force Autosave";
+            this.forceAutosaveButton.UseVisualStyleBackColor = true;
+            this.forceAutosaveButton.Click += new System.EventHandler(this.forceAutosaveButton_Click);
+            // 
             // buttonLoadSetAside
             // 
             this.buttonLoadSetAside.Location = new System.Drawing.Point(6, 52);
@@ -338,16 +358,6 @@
             this.buttonSetAside.UseVisualStyleBackColor = true;
             this.buttonSetAside.Click += new System.EventHandler(this.buttonSetAside_Click);
             // 
-            // forceAutosaveButton
-            // 
-            this.forceAutosaveButton.Location = new System.Drawing.Point(6, 85);
-            this.forceAutosaveButton.Name = "forceAutosaveButton";
-            this.forceAutosaveButton.Size = new System.Drawing.Size(129, 27);
-            this.forceAutosaveButton.TabIndex = 19;
-            this.forceAutosaveButton.Text = "Force Autosave";
-            this.forceAutosaveButton.UseVisualStyleBackColor = true;
-            this.forceAutosaveButton.Click += new System.EventHandler(this.forceAutosaveButton_Click);
-            // 
             // buttonSetPosition
             // 
             this.buttonSetPosition.Location = new System.Drawing.Point(6, 19);
@@ -365,10 +375,20 @@
             this.groupBox5.Controls.Add(this.buttonSetPosition);
             this.groupBox5.Location = new System.Drawing.Point(201, 271);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(141, 125);
+            this.groupBox5.Size = new System.Drawing.Size(144, 125);
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Position Options";
+            // 
+            // pastePositionButton
+            // 
+            this.pastePositionButton.Location = new System.Drawing.Point(6, 85);
+            this.pastePositionButton.Name = "pastePositionButton";
+            this.pastePositionButton.Size = new System.Drawing.Size(129, 27);
+            this.pastePositionButton.TabIndex = 22;
+            this.pastePositionButton.Text = "Set Position From Paste";
+            this.pastePositionButton.UseVisualStyleBackColor = true;
+            this.pastePositionButton.Click += new System.EventHandler(this.pastePositionButton_Click);
             // 
             // buttonCopyPos
             // 
@@ -390,6 +410,16 @@
             this.groupBox6.TabIndex = 22;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Level Options";
+            // 
+            // buttonSetPlanet
+            // 
+            this.buttonSetPlanet.Location = new System.Drawing.Point(8, 47);
+            this.buttonSetPlanet.Name = "buttonSetPlanet";
+            this.buttonSetPlanet.Size = new System.Drawing.Size(322, 27);
+            this.buttonSetPlanet.TabIndex = 22;
+            this.buttonSetPlanet.Text = "Set Current Planet";
+            this.buttonSetPlanet.UseVisualStyleBackColor = true;
+            this.buttonSetPlanet.Click += new System.EventHandler(this.buttonSetPlanet_Click);
             // 
             // comboLevelSelect
             // 
@@ -426,36 +456,6 @@
             this.comboLevelSelect.Name = "comboLevelSelect";
             this.comboLevelSelect.Size = new System.Drawing.Size(322, 21);
             this.comboLevelSelect.TabIndex = 0;
-            // 
-            // buttonSetPlanet
-            // 
-            this.buttonSetPlanet.Location = new System.Drawing.Point(8, 47);
-            this.buttonSetPlanet.Name = "buttonSetPlanet";
-            this.buttonSetPlanet.Size = new System.Drawing.Size(322, 27);
-            this.buttonSetPlanet.TabIndex = 22;
-            this.buttonSetPlanet.Text = "Set Current Planet";
-            this.buttonSetPlanet.UseVisualStyleBackColor = true;
-            this.buttonSetPlanet.Click += new System.EventHandler(this.buttonSetPlanet_Click);
-            // 
-            // pastePositionButton
-            // 
-            this.pastePositionButton.Location = new System.Drawing.Point(6, 85);
-            this.pastePositionButton.Name = "pastePositionButton";
-            this.pastePositionButton.Size = new System.Drawing.Size(129, 27);
-            this.pastePositionButton.TabIndex = 22;
-            this.pastePositionButton.Text = "Set Position From Paste";
-            this.pastePositionButton.UseVisualStyleBackColor = true;
-            this.pastePositionButton.Click += new System.EventHandler(this.pastePositionButton_Click);
-            // 
-            // buttonRecording
-            // 
-            this.buttonRecording.Location = new System.Drawing.Point(9, 52);
-            this.buttonRecording.Name = "buttonRecording";
-            this.buttonRecording.Size = new System.Drawing.Size(129, 27);
-            this.buttonRecording.TabIndex = 17;
-            this.buttonRecording.Text = "Recording Mode";
-            this.buttonRecording.UseVisualStyleBackColor = true;
-            this.buttonRecording.Click += new System.EventHandler(this.buttonRecording_Click);
             // 
             // FormMain
             // 
