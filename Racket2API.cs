@@ -41,7 +41,14 @@ namespace rackets2listener
 
             string scriptDir = Path.GetDirectoryName(scriptFilePath);
             string compiledFileName = Path.GetFileNameWithoutExtension(scriptFilePath) + ".rtas";
-            string compiledFilePath = Path.Combine(scriptDir, compiledFileName);
+
+            string compiledDir = Path.Combine(scriptDir, "compiled");
+            if (!Directory.Exists(compiledDir))
+            {
+                Directory.CreateDirectory(compiledDir);
+            }
+            string compiledFilePath = Path.Combine(compiledDir, compiledFileName);
+
 
             try
             {
