@@ -48,8 +48,9 @@ namespace rackets2listener
             public ushort ButtonMask;
             public byte Load_Pos_Flag = 0;
             public byte Breakpoint = 0;
-            public ushort Render = 0;
-            public ushort Length = 0x18;
+            public byte Render = 0;
+            public byte Length = 0x18;
+            public uint Randomness = 0;
 
             public byte LX = 128; // default neutral
             public byte LY = 128;
@@ -58,17 +59,19 @@ namespace rackets2listener
 
             public override void Run(BinaryWriter writer)
             {
-                writer.Write(BitConverter.GetBytes(ButtonMask).Reverse().ToArray());
+                writer.Write(BitConverter.GetBytes(ButtonMask).Reverse().ToArray()); 
 
                 // Write stick values
                 writer.Write(new byte[] { RX, RY, LX, LY });
 
-                writer.Write(Load_Pos_Flag);     // 1 byte
-                writer.Write(Breakpoint);        // 1 byte
+                writer.Write(Load_Pos_Flag);  
+                writer.Write(Breakpoint);     
+                writer.Write(Render);    
+                writer.Write(Length);   
+                writer.Write(BitConverter.GetBytes(Randomness).Reverse().ToArray());
 
-                writer.Write(BitConverter.GetBytes(Render).Reverse().ToArray());
-                writer.Write(BitConverter.GetBytes(Length).Reverse().ToArray());
-                writer.Write(BitConverter.GetBytes(0x7C).Reverse().ToArray());
+
+                writer.Write(BitConverter.GetBytes((ushort)0x7C).Reverse().ToArray());
             }
         }
 
@@ -369,7 +372,8 @@ namespace rackets2listener
 
             byte load_pos_flag = 0;
             byte breakpoint = 0;
-            ushort render = 0;
+            byte render = 0;
+            uint rng = 0;
             byte lx = 128, ly = 128, rx = 128, ry = 128;
 
             int i = 0;
@@ -412,6 +416,19 @@ namespace rackets2listener
                     render |= 0b0001;
                     i++;
                 }
+
+                else if (token == "rng")
+                {
+                    i++;
+                    if (i >= tokens.Length)
+                        throw new Exception("Expected number after rng");
+
+                    if (!uint.TryParse(tokens[i++], out uint parsedRng))
+                        throw new Exception("Invalid rng value, must be unsigned integer");
+
+                    rng = parsedRng;
+                }
+
                 else if (token == "left_stick" || token == "right_stick")
                 {
                     string stick = token == "left_stick" ? "left" : "right";
@@ -472,7 +489,18 @@ namespace rackets2listener
                 }
             }
 
-            return new ButtonPress { ButtonMask = btnMask, Load_Pos_Flag = load_pos_flag, Breakpoint = breakpoint, Render = render, LX = lx, LY = ly, RX = rx, RY = ry };
+            return new ButtonPress
+            {
+                ButtonMask = btnMask,
+                Load_Pos_Flag = load_pos_flag,
+                Breakpoint = breakpoint,
+                Render = render,
+                Randomness = rng,
+                LX = lx,
+                LY = ly,
+                RX = rx,
+                RY = ry,
+            };
         }
 
     }

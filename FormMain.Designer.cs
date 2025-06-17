@@ -363,9 +363,9 @@
             this.groupBox5.Controls.Add(this.pastePositionButton);
             this.groupBox5.Controls.Add(this.buttonCopyPos);
             this.groupBox5.Controls.Add(this.buttonSetPosition);
-            this.groupBox5.Location = new System.Drawing.Point(207, 271);
+            this.groupBox5.Location = new System.Drawing.Point(201, 271);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(144, 125);
+            this.groupBox5.Size = new System.Drawing.Size(141, 125);
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Position Options";
